@@ -1,0 +1,50 @@
+body{
+    color: black;
+}
+.notes{
+    background: rgb(241, 233, 222);
+    height: 100vh;
+    text-align: left;
+}
+
+h3{
+    font-family: comic Arial, Helvetica, sans-serif ;
+    font-size: 40px;  
+    font-weight: lighter;
+}
+
+.links{
+   text-decoration: none;
+   color: black;
+   text-align: left;
+   font-family: comic Arial, Helvetica, sans-serif ;
+   font-size: 20px;
+}
+
+.links > p{
+    margin-left: 30px;
+}
+
+form{
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: left;
+    
+}
+
+input{
+    width: 50%;
+    height: 40px;
+    color: black;
+}
+
+textarea{
+    width: 50%;
+    color: black;
+}
+
+label{
+    font-family: comic Arial, Helvetica, sans-serif ;
+    font-weight: lighter;
+    color: black;
+}
