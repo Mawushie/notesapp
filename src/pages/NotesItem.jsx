@@ -29,19 +29,25 @@ class NotesItem extends React.Component{
     }
     render(){
         return(
-            <div className = "row" style = {{marginLeft : 20}}>
+            <div className = "row" style = {{marginLeft : 20, marginTop :20}}>
          
-            <h4>{this.props.note.notetitle}</h4>
-            
-            <h4>{this.props.note.notedate}</h4>
-               
-            <h4>{this.props.note.notetext}</h4>
-                
-            <h4>
-                <i class="fa fa-pencil editdelete" aria-hidden="true" onClick = {this.showModal} > </i>
-                <i class="fa fa-minus-circle editdelete" aria-hidden="true" onClick = {this.handleDelete}></i>
-            </h4>
+            <div className = "col-md-1 text-center">
+                <h4>Title</h4>{this.props.note.notetitle}
+            </div>
+            <div className = "col-md-3 text-center">
+                <h4>Note Details</h4>{this.props.note.notetext}
+            </div>
 
+            <div className = "col-md-2 text-center">
+                <h4>Date</h4>{this.props.note.notedate}
+            </div>
+
+            <div className = "col-md-2 text-center">
+             <h4>Actions</h4>
+                <i class="fa fa-pencil editdelete" aria-hidden="true" onClick = {this.showModal} > Edit</i> 
+                <i class="fa fa-minus-circle editdelete" aria-hidden="true" onClick = {this.handleDelete}> Delete</i>
+                   
+            </div> 
            
 
             

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Router from '../components/Router'
+import AddNote from './AddNote'
 import NotesList from './NotesList'
 
 export default class HomePage extends Component {
@@ -8,16 +8,21 @@ export default class HomePage extends Component {
             <div>
                 <div className = "container">
                     <div className = "row">
-                        <div className = "col-md-12 notes">
-                            <h3>My Notes</h3>
-                            <Router />
-                            <NotesList />
+                         <h3>My Notes</h3>
+                        <div className = "col-md-4 notes">
+                            
+                            <AddNote />
                         </div>
 
-                    </div>
+                        <div className = "col-md-8 noteslist">
+                            <NotesList />
+                        </div>
+                     </div>
 
-                </div>
+                 </div>
+
             </div>
+           
         )
     }
 }

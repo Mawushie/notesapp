@@ -11,7 +11,7 @@ ReactDOM.render(
   
     <App />
   
-  </Provider>,
+</Provider>,
   document.getElementById('root')
   
 );

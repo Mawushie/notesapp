@@ -10,7 +10,7 @@ class AddNote extends Component {
         this.state = {
             notetitle : "",
             notedate : "",
-            notetext : ""
+            notetext : "",
         };
     }
 
@@ -31,13 +31,25 @@ class AddNote extends Component {
             notetext : ""
         })
     }
+
+    closeForm = () =>{
+        this.setState(
+           {show : false}
+        )
+    }
+    showForm = () =>{
+        this.setState(
+            {show : true}
+        )
+    }
     
     render() {
         // console.log(this.state);
         return (
             <div>
+                
             <form>
-               
+                <h4><a onClick = "">Add New Note</a></h4><br></br><br></br>
                 <label>Title</label> <br></br>
                 <input type = "text" name = "notetitle" value = {this.state.notetitle} onChange = {this.handleOnChange}></input> <br></br>
                 <br></br>
