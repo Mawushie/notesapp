@@ -1,4 +1,18 @@
-import {createStore} from 'redux'
+import {createStore , compose, applyMiddleware} from 'redux'
 import notesReducer from '../reducers/notesReducer'
+import { getFirebase, reactReduxFirebase } from 'react-redux-firebase'
+import { getFirestore, reduxFirestore } from 'redux-firestore'
+import firebase from '../firebase/config'
+import thunk from 'redux-thunk'
 
-export const store = createStore(notesReducer)
+export const store = createStore(notesReducer, compose(
+    applyMiddleware(thunk.withExtraArgument({getFirebase,getFirestore})),
+    reactReduxFirebase(firebase),
+    reduxFirestore(firebase)
+));
+
+//applyMiddleware is used when you want to build packages on top of the normal
+//redux react flow (the reason we doingthat for thunk because it is sort of interrupt the normal
+//flow)
+
+
