@@ -4,27 +4,32 @@ var initialState = {
 
 const notesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_NOTE':
-           return{
-               ...state , notes : [...state.notes , action.payload]
-           }
+        // case 'ADD_NOTE':
+        //    return{
+        //        ...state , notes : [...state.notes , action.payload]
+        //    }
 
-            
-        case "EDIT_NOTE":
-            var id = action.payload.id;
-            let updatedNotesInfo = action.payload.updatedNotesInfo;
-            let notesAfterUpdate = state.notes.map((note) => {
-              if (note.id === id) {
-                return updatedNotesInfo;
-              }
-              return note;
-            });
-            return { notes: notesAfterUpdate };
+        case "GET_ALL_NOTES":
+        let notesfromdb = action.payload//payload contains the data that is in the db
+        return {
+            notes : notesfromdb
+        }
+                    
+        // case "EDIT_NOTE":
+        //     var id = action.payload.id;
+        //     let updatedNotesInfo = action.payload.updatedNotesInfo;
+        //     let notesAfterUpdate = state.notes.map((note) => {
+        //       if (note.id === id) {
+        //         return updatedNotesInfo;
+        //       }
+        //       return note;
+        //     });
+        //     return { notes: notesAfterUpdate };
         
-        case "DELETE_NOTE":
-            var id = action.payload;
-            let notesAfterDelete = state.notes.filter((note) => note.id !== id);
-            return { notes: notesAfterDelete };
+        // case "DELETE_NOTE":
+        //     var id = action.payload;
+        //     let notesAfterDelete = state.notes.filter((note) => note.id !== id);
+        //     return { notes: notesAfterDelete };
             
         default: 
            return state;
