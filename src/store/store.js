@@ -1,11 +1,16 @@
-import {createStore , compose, applyMiddleware} from 'redux'
+import {createStore , compose, applyMiddleware ,combineReducers} from 'redux'
 import notesReducer from '../reducers/notesReducer'
-import { getFirebase, reactReduxFirebase } from 'react-redux-firebase'
+import { getFirebase, reactReduxFirebase ,firebaseReducer } from 'react-redux-firebase'
 import { getFirestore, reduxFirestore } from 'redux-firestore'
 import firebase from '../firebase/config'
 import thunk from 'redux-thunk'
 
-export const store = createStore(notesReducer, compose(
+const allReducers = combineReducers({
+    notesState : notesReducer,
+    firebaseState : firebaseReducer
+})
+
+export const store = createStore(allReducers, compose(
     applyMiddleware(thunk.withExtraArgument({getFirebase,getFirestore})),
     reactReduxFirebase(firebase),
     reduxFirestore(firebase)

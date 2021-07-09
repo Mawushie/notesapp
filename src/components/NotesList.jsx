@@ -33,7 +33,7 @@ class NotesList extends React.Component{
 }
 const mapStateToProps = (state) =>{
     return{
-    notesData : state.notes
+    notesData : state.notesState.notes
 }
 }
 
